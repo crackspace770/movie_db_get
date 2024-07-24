@@ -1,0 +1,31 @@
+name: moviedb_get
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.6
+  get: 4.6.6
+  google_fonts: ^4.0.5
+  shared_preferences: ^2.1.1
+  sqflite: ^2.2.8+4
+  http: ^1.0.0
+  intl: ^0.17.0
+  rxdart: ^0.27.5
+
+  flutter: 
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: 4.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+
+  assets:
+    - assets/
+
