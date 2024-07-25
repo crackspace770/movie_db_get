@@ -36,34 +36,34 @@ class SearchResponse {
 
 
 class Search {
-  final bool adult;
-  final String backdropPath;
-  final int id;
-  final String title;
-  final String originalTitle;
-  final String overview;
-  final String posterPath;
-  final MediaType mediaType;
-  final DateTime releaseDate;
-  final double voteAverage;
-  final String name;
-  final String originalName;
-  final DateTime firstAirDate;
+  final bool? adult;
+  final String? backdropPath;
+  final int? id;
+  final String? title;
+  final String? originalTitle;
+  final String? overview;
+  final String? posterPath;
+  final MediaType? mediaType;
+  final DateTime? releaseDate;
+  final double? voteAverage;
+  final String? name;
+  final String? originalName;
+  final DateTime? firstAirDate;
 
   Search({
-    required this.adult,
-    required this.backdropPath,
-    required this.id,
-    required this.title,
-    required this.originalTitle,
-    required this.overview,
-    required this.posterPath,
-    required this.mediaType,
-    required this.releaseDate,
-    required this.voteAverage,
-    required this.name,
-    required this.originalName,
-    required this.firstAirDate,
+    this.adult,
+    this.backdropPath,
+    this.id,
+    this.title,
+    this.originalTitle,
+    this.overview,
+    this.posterPath,
+    this.mediaType,
+    this.releaseDate,
+    this.voteAverage,
+    this.name,
+    this.originalName,
+    this.firstAirDate,
   });
 
   factory Search.fromJson(Map<String, dynamic> json) {
@@ -98,11 +98,11 @@ class Search {
       'overview': overview,
       'poster_path': posterPath,
       'media_type': mediaTypeValues.reverse[mediaType],
-      'release_date': releaseDate.toIso8601String(),
+      'release_date': releaseDate?.toIso8601String(),
       'vote_average': voteAverage,
       'name': name,
       'original_name': originalName,
-      'first_air_date': firstAirDate.toIso8601String(),
+      'first_air_date': firstAirDate?.toIso8601String(),
     };
   }
 }

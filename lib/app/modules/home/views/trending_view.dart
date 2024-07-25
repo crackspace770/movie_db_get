@@ -92,7 +92,7 @@ class CardTrending extends StatelessWidget {
           SizedBox(
             width: 100,
             child: Text(
-              trending.title ?? "",
+              (trending.name?.isNotEmpty ?? false) ? trending.name! : (trending.originalTitle ?? ''),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(fontWeight: FontWeight.bold),

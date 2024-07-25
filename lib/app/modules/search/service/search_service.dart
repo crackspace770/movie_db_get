@@ -13,12 +13,15 @@ class SearchService{
   final String search = ConstVariable.movieSearch;
 
 
-  Future <SearchResponse> searchMovie({String? query}) async{
+  Future<SearchResponse> searchMovie({String? query}) async {
+    final response = await client.get(Uri.parse("https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=true&api_key=$api_key"));
 
-    final response = await client.get(Uri.parse("https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=true&api_key=e4f0bf9deb75ea82eec186d6a65814ae"));
-    if(response == 200) {
+    print("Status Code: ${response.statusCode}");
+    print("Response Body: ${response.body}");
+
+    if (response.statusCode == 200) {
       return SearchResponse.fromJson(json.decode(response.body));
-    }else{
+    } else {
       throw Exception("Failed to load movie");
     }
   }

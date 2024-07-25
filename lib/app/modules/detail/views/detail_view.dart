@@ -44,6 +44,8 @@ class _DetailViewState extends State<DetailView> {
                       if (detailController.dataDetailMovie.value.posterPath != null)
                         Image.network(
                           "https://image.tmdb.org/t/p/w500/${detailController.dataDetailMovie.value.posterPath}",
+                          width: 500,
+                          height: 500,
 
                         ),
                       SafeArea(
@@ -140,4 +142,6 @@ class _DetailViewState extends State<DetailView> {
     );
   }
 }
+
+
 
