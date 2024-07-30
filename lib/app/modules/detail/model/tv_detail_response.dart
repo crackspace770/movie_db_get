@@ -36,6 +36,7 @@ String tvDetailToJson(TvDetail data) => json.encode(data.toJson());
 class TvDetail {
   final int? id;
   final String? name;
+  final String? originalTitle;
   final String? posterPath;
   final DateTime? firstAirDate;
   final double? voteAverage;
@@ -45,6 +46,7 @@ class TvDetail {
   TvDetail({
     this.id,
     this.name,
+    this.originalTitle,
     this.posterPath,
     this.firstAirDate,
     this.voteAverage,
@@ -56,6 +58,7 @@ class TvDetail {
     return TvDetail(
       id: json["id"],
       name: json['name'],
+      originalTitle: json['original_title'],
       posterPath: json['poster_path'],
       firstAirDate: DateTime.parse(json['first_air_date']),
       voteAverage: (json['vote_average'] as num).toDouble(), // Ensure voteAverage is double
@@ -68,6 +71,7 @@ class TvDetail {
     return {
       "id": id,
       'name': name,
+      'original_title': originalTitle,
       'poster_path': posterPath,
       'first_air_date': firstAirDate?.toIso8601String(),
       'vote_average': voteAverage,

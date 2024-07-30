@@ -36,6 +36,7 @@ class MovieDetailResponse {
 class MovieDetail {
   final int? id;
   final String? title;
+  final String? originalTitle;
   final String? posterPath;
   final DateTime? releaseDate;
   final double? voteAverage;
@@ -45,6 +46,7 @@ class MovieDetail {
   MovieDetail({
     this.id,
     this.title,
+    this.originalTitle,
     this.posterPath,
     this.releaseDate,
     this.voteAverage,
@@ -56,6 +58,7 @@ class MovieDetail {
     return MovieDetail(
       id: json["id"],
       title: json['title'],
+      originalTitle: json['original_title'],
       posterPath: json['poster_path'],
       releaseDate: DateTime.parse(json['release_date']),
       voteAverage: (json['vote_average'] as num).toDouble(), // Ensure voteAverage is double
@@ -68,6 +71,7 @@ class MovieDetail {
     return {
       "id": id,
       'title': title,
+      'original_title':originalTitle,
       'poster_path': posterPath,
       'release_date': releaseDate?.toIso8601String(),
       'vote_average': voteAverage,

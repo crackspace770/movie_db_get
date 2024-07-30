@@ -69,7 +69,17 @@ class SearchView extends GetView<SearchesController> {
                 )
                     : searchController.dataSearch.isEmpty
                     ? const Center(
-                  child: Text("No Data"),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        SizedBox(height: 150),
+                        Icon(Icons.movie,
+                          size: 100,
+                        ),
+                        Text("Search any movie you want"),
+                      ],
+                    ),
+                  ),
                 )
                     : ListView.builder(
                   itemCount: searchController.dataSearch.length,

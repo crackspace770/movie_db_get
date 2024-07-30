@@ -92,7 +92,7 @@ class CardTrending extends StatelessWidget {
           SizedBox(
             width: 100,
             child: Text(
-              (trending.name?.isNotEmpty ?? false) ? trending.name! : (trending.originalTitle ?? ''),
+              (trending.originalTitle?.isNotEmpty ?? false) ? trending.name! : (trending.originalName ?? ''),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(fontWeight: FontWeight.bold),
@@ -109,7 +109,7 @@ class CardTrending extends StatelessWidget {
               SizedBox(width: 2.0),
               Text(
                 trending.releaseDate != null
-                    ? DateFormat('yyyy-MM-dd').format(trending.releaseDate!)
+                    ? DateFormat('yyyy-MM-dd').format(trending.releaseDate! as DateTime)
                     : 'No Release Date',
                 style: TextStyle(fontSize: 12.0),
               ),

@@ -14,6 +14,7 @@ import 'app/routes/app_routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
